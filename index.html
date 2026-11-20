@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Planificateur de séances</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Planificateur de séances</h1>
+<p class="sub">Saisissez le thème, la durée, le niveau et les objectifs : l’outil produit un plan minuté avec des activités variées.</p>
+
+<section class="card noprint">
+<div class="grid">
+<div class="full"><label for="theme">Thème de la séance</label><input id="theme"></div>
+<div><label for="duree">Durée (minutes)</label><input id="duree" type="number" min="15" max="240"></div>
+<div><label for="niveau">Niveau</label><input id="niveau"></div>
+<div><label for="eff">Effectif</label><input id="eff" type="number" min="1" max="60"></div>
+<div><label for="mat">Matériel disponible</label>
+<select id="mat"><option value="std">Tableau + feuilles</option><option value="num">Vidéoprojecteur / ordinateurs</option><option value="min">Aucun matériel</option></select></div>
+<div class="full"><label for="obj">Objectifs (un par ligne)</label>
+<textarea id="obj"></textarea></div>
+<div class="full"><label for="prog">Bonus : extrait du programme officiel (facultatif, une compétence ou un attendu par ligne)</label>
+<textarea id="prog"></textarea></div>
+</div>
+<div id="err" class="warn hide" style="margin-top:12px"></div>
+<div class="row" style="margin-top:14px"><button class="p" id="gen">Générer le plan</button></div>
+</section>
+
+<section id="out" class="card hide"></section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
